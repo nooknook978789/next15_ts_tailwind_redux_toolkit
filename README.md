@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🚀 Next.js 15.3.3 + React 19 + TypeScript + Tailwind + Redux Toolkit Starter
 
-First, run the development server:
+This is a modern web application starter built with:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- ⚡ **Next.js 15.3.3** (App Router)
+- ⚛️ **React 19**
+- 🧠 **TypeScript** for type safety
+- 💨 **Tailwind CSS** for styling
+- 🛠 **Redux Toolkit (RTK)** for state management
+- 📦 **pnpm** for fast and efficient package installation
+
+---
+
+## 📁 Project Structure
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+.
+├── app/                  # App directory using Next.js App Router
+├── components/           # Reusable React components
+├── features/             # Redux Toolkit slices
+├── hooks/                # Custom React hooks
+├── store/                # Redux store configuration
+├── styles/               # Global Tailwind CSS styles
+├── types/                # Global TypeScript types
+├── public/               # Static assets
+├── utils/                # Utility functions
+├── pnpm-lock.yaml        # pnpm lock file
+├── tailwind.config.ts    # Tailwind CSS configuration
+└── tsconfig.json         # TypeScript configuration with path aliases
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+````
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧑‍💻 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Clone the repository
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+git clone https://github.com/your-username/next15_ts_tailwind_redux_toolkit.git
+cd next15_ts_tailwind_redux_toolkit
+````
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Install dependencies
 
-## Deploy on Vercel
+```bash
+pnpm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Run the development server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm dev
+```
+
+The app will be running at: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📦 Scripts
+
+| Script        | Description                 |
+| ------------- | --------------------------- |
+| `pnpm dev`    | Run in development mode     |
+| `pnpm build`  | Build for production        |
+| `pnpm start`  | Start the production server |
+| `pnpm lint`   | Run ESLint                  |
+| `pnpm format` | Format code with Prettier   |
+
+---
+
+## 🎨 Styling with Tailwind
+
+Tailwind is preconfigured. You can start using utility classes right away:
+
+```html
+<div className="text-center text-xl font-bold text-blue-500">
+  Hello Tailwind!
+</div>
+```
+
+---
+
+## 🧠 State Management with Redux Toolkit
+
+Redux Toolkit is set up using the `@reduxjs/toolkit` package. Add new slices in the `features/` folder and register them in `store/index.ts`.
+
+Example slice:
+
+```ts
+// features/counterSlice.ts
+import { createSlice } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: 0,
+  reducers: {
+    increment: (state) => state + 1,
+  },
+});
+
+export const { increment } = counterSlice.actions;
+export default counterSlice.reducer;
+```
+
+---
+
+## ✅ Tech Stack Summary
+
+* **Framework**: [Next.js](https://nextjs.org/)
+* **UI Library**: [React](https://react.dev/)
+* **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+* **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/)
+* **Type Safety**: [TypeScript](https://www.typescriptlang.org/)
+* **Package Manager**: [pnpm](https://pnpm.io/)
+
+---
+
+## 📌 Requirements
+
+* Node.js v18+
+* pnpm v8+
+
